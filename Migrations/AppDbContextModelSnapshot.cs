@@ -121,7 +121,6 @@ namespace GNET90_EFCORE04.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("NationalId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("PhoneNumber")
@@ -131,7 +130,8 @@ namespace GNET90_EFCORE04.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("NationalId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[NationalId] IS NOT NULL");
 
                     b.ToTable("Customer");
                 });
@@ -188,7 +188,6 @@ namespace GNET90_EFCORE04.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HireDate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
@@ -308,8 +307,7 @@ namespace GNET90_EFCORE04.Migrations
 
             modelBuilder.Entity("GNET90_EFCORE04.Models.Manager", b =>
                 {
-                    b.Navigation("Branch")
-                        .IsRequired();
+                    b.Navigation("Branch");
                 });
 #pragma warning restore 612, 618
         }
