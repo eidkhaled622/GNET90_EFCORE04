@@ -52,7 +52,7 @@ namespace GNET90_EFCORE04.Migrations
 
                     b.HasIndex("BranchId");
 
-                    b.ToTable("Account");
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("GNET90_EFCORE04.Models.Branch", b =>
@@ -90,7 +90,7 @@ namespace GNET90_EFCORE04.Migrations
                     b.HasIndex("ManagerId")
                         .IsUnique();
 
-                    b.ToTable("Branch");
+                    b.ToTable("Branches");
                 });
 
             modelBuilder.Entity("GNET90_EFCORE04.Models.Customer", b =>
@@ -133,7 +133,7 @@ namespace GNET90_EFCORE04.Migrations
                         .IsUnique()
                         .HasFilter("[NationalId] IS NOT NULL");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("GNET90_EFCORE04.Models.CustomerAccount", b =>
@@ -233,7 +233,7 @@ namespace GNET90_EFCORE04.Migrations
                     b.HasIndex("TransactionNumber")
                         .IsUnique();
 
-                    b.ToTable("Transaction");
+                    b.ToTable("transactions");
                 });
 
             modelBuilder.Entity("GNET90_EFCORE04.Models.Account", b =>

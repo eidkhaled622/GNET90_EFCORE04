@@ -21,9 +21,9 @@ namespace GNET90_EFCORE04.Data
 
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Manager> Managers { get; set; }
-        public DbSet<Branch> Accounts { get; set; }
-        public DbSet<Branch> Customers { get; set; }
-        public DbSet<Branch> transactions { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Transaction> transactions { get; set; }
         public DbSet<CustomerAccount> CustomerAccounts { get; set; }
     }
 }
